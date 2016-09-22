@@ -3,15 +3,18 @@ package se.lyrner;
 public class TermDocument {
 
     private Integer documentId;
-    private Integer termCount;
+    private int documentFrequency;
 
-    public TermDocument(Integer documentId, Integer termCount) {
+    public TermDocument(Integer documentId) {
         this.documentId = documentId;
-        this.termCount = termCount;
     }
 
-    public Integer incrementTermCount() {
-        termCount++;
-        return termCount;
+    public int incrementTermCount() {
+        documentFrequency++;
+        return documentFrequency;
+    }
+
+    public int getDocumentId() {
+        return documentId;
     }
 }

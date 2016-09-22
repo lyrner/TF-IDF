@@ -16,10 +16,21 @@ public class Corpus {
     }
 
     public Term addNewTerm(String term) {
-        return termIndex.putIfAbsent(term, new Term(term));
+        if (!termIndex.containsKey(term)) {
+            termIndex.put(term, new Term(term));
+        }
+        return termIndex.get(term);
     }
 
     public Term searchCorpus(String term) {
         return termIndex.get(term);
+    }
+
+    public void setNumberOfDocuments(int numberOfDocuments) {
+        this.numberOfDocuments = numberOfDocuments;
+    }
+
+    public int getNumberOfDocuments() {
+        return numberOfDocuments;
     }
 }

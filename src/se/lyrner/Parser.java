@@ -23,16 +23,20 @@ public class Parser {
 
     public Corpus parseCorpus() {
         Corpus corpus = new Corpus();
-
-        for (int i = 0; i < fakeFiles.length; i++) {
-            String[] tokenizedText = tokenizeText(fakeFiles[i]);
+        int documentIndex;
+        for (documentIndex = 0; documentIndex < fakeFiles.length; documentIndex++) {
+            String[] tokenizedText = tokenizeText(fakeFiles[documentIndex]);
             for (String token : tokenizedText) {
                 Term term = corpus.addNewTerm(token);
-                term.increment(i);
+                term.increment(documentIndex);
             }
         }
 
+        corpus.setNumberOfDocuments(documentIndex);
 
+        System.out.println(corpus.getNumberOfDocuments());
+
+        //
 
         return corpus;
     }
