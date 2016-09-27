@@ -1,13 +1,11 @@
 package se.lyrner;
 
-import java.util.List;
-
 /**
  * Created by Emil on 2016-09-12.
  */
-public class Parser {
+class Parser {
 
-    public Corpus parseCorpus(String[] documents) {
+    Corpus parseCorpus(String[] documents) {
         Corpus corpus = new Corpus();
         int documentIndex;
         for (documentIndex = 0; documentIndex < documents.length; documentIndex++) {

@@ -7,11 +7,11 @@ import java.util.List;
 /**
  * Created by Emil on 2016-08-24.
  */
-public class Term {
+class Term {
 
     private List<TermDocument> termDocumentIndex = new ArrayList<>();
 
-    public TermDocument newTermDocument(Integer documentId) {
+    private TermDocument newTermDocument(Integer documentId) {
         int index = termDocumentIndex.size() - 1;
         if (index == -1 || termDocumentIndex.get(index).getDocumentId() != documentId) {
             termDocumentIndex.add(new TermDocument(documentId));
@@ -20,15 +20,15 @@ public class Term {
         return termDocumentIndex.get(index);
     }
 
-    public List<TermDocument> getTermDocumentIndex() {
+    List<TermDocument> getTermDocumentIndex() {
         return termDocumentIndex;
     }
 
-    public void increment(int documentId) {
+    void increment(int documentId) {
         newTermDocument(documentId).incrementTermCount();
     }
 
-    public void rankTerm(int numberOfDocuments, List<Integer> documentsLength) {
+    void rankTerm(int numberOfDocuments, List<Integer> documentsLength) {
         double idf = calulateIDF(numberOfDocuments, termDocumentIndex.size());
         for (TermDocument document : termDocumentIndex) {
             double tf = calculateTF(document.getTermFrequency(), documentsLength.get(document.getDocumentId()));

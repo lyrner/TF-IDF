@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * Created by Emil on 2016-09-27.
  */
-public class SearchEngine {
+class SearchEngine {
 
     private String[] documents = {
             "Resultat från tävlingarna i backhoppning vid olympiska vinterspelen 1988. lagtävling i backhoppning arrangerades för första gången i OS-sammanhang.",
@@ -21,7 +21,7 @@ public class SearchEngine {
     private Corpus corpus;
     private Scanner scanner;
 
-    public SearchEngine() {
+    SearchEngine() {
         System.out.println("Welcome to this super search engine. Please wait while indexing...");
         scanner = new Scanner(System.in);
 

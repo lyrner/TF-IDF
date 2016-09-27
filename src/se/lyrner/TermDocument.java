@@ -1,33 +1,36 @@
 package se.lyrner;
 
-public class TermDocument implements Comparable<TermDocument> {
+/**
+ * Created by Emil on 2016-08-24.
+ */
+class TermDocument implements Comparable<TermDocument> {
 
     private Integer documentId;
     private int termFrequency;
     private double tfidfScore;
 
-    public TermDocument(Integer documentId) {
+    TermDocument(Integer documentId) {
         this.documentId = documentId;
     }
 
-    public int incrementTermCount() {
+    int incrementTermCount() {
         termFrequency++;
         return termFrequency;
     }
 
-    public int getTermFrequency() {
+    int getTermFrequency() {
         return termFrequency;
     }
 
-    public int getDocumentId() {
+    int getDocumentId() {
         return documentId;
     }
 
-    public double getTfidfScore() {
+    double getTfidfScore() {
         return tfidfScore;
     }
 
-    public void setTfidfScore(double tfidfScore) {
+    void setTfidfScore(double tfidfScore) {
         this.tfidfScore = tfidfScore;
     }
 
