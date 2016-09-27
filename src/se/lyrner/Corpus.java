@@ -15,14 +15,14 @@ public class Corpus {
 
     }
 
-    public Term getTerm(String term) {
+    public Term addTerm(String term) {
         if (!termIndex.containsKey(term)) {
-            termIndex.put(term, new Term(term));
+            termIndex.put(term, new Term());
         }
         return termIndex.get(term);
     }
 
-    public Term searchCorpus(String term) {
+    public Term getTerm(String term) {
         return termIndex.get(term);
     }
 
@@ -30,16 +30,8 @@ public class Corpus {
         this.numberOfDocuments = numberOfDocuments;
     }
 
-    public int getNumberOfDocuments() {
-        return numberOfDocuments;
-    }
-
     public void setDocumentsLength(int length) {
         documentsLength.add(length);
-    }
-
-    public Integer getDocumentLength(int documentIndex) {
-        return documentsLength.get(documentIndex);
     }
 
     public void rankTerms() {
