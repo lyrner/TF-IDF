@@ -11,10 +11,6 @@ class Corpus {
     private List<Integer> documentsLength = new ArrayList<>();
     private Map<String, Term> termIndex = new HashMap<>();
 
-    Corpus() {
-
-    }
-
     Term addTerm(String term) {
         if (!termIndex.containsKey(term)) {
             termIndex.put(term, new Term());
